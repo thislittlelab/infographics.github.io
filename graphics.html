@@ -1,0 +1,54 @@
+<!DOCTYPE html>
+<html>
+<head>
+    <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.3.1/jquery.min.js"></script>
+    <style>
+        #slideshow {
+            margin: 0 auto;
+            position: relative;
+        }
+
+            #slideshow > div {
+                position: absolute;
+            }
+    </style>
+    <meta charset="utf-8" />
+</head>
+
+<body style="background-color: green;">
+    <div id="slideshow">
+        <div>
+            <img src="imgs/Discord.png">
+        </div>
+        <div>
+            <img src="imgs/Commands.png">
+        </div>
+        <div>
+            <img src="imgs/Electrons.png">
+        </div>
+        <div>
+            <img src="imgs/Shop.png">
+        </div>
+        <div>
+            <img src="imgs/Simulcast.png">
+        </div>
+    </div>
+    <div>help</div>
+</body>
+</html>
+
+<script type="text/javascript">
+    $("#slideshow > div:gt(0)").hide();
+   // $('#slideshow > div:first').fadeOut(0);
+
+    setInterval(function () {
+        $('#slideshow > div:first')
+            .fadeOut(1000)
+            .next()
+            .delay(6000)
+            .fadeIn(1000)
+            .delay(3000)
+            .end()
+            .appendTo('#slideshow');
+    }, 11000);
+</script>
